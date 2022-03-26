@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Ropa+Sans&display=swap');
+@import url("hover-min.css");
+
+*{
+  /* font-family: 'Ropa Sans', sans-serif;  */
+  font-family: 'Cairo', sans-serif;
+
+}
+
+
+/* color:
+#c0ffff //blue
+#ff0000 ///red
+#1d9292
+
+*/
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

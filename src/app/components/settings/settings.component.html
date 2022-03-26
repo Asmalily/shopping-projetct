@@ -1,0 +1,27 @@
+
+<form class=" container form-group" #form="ngForm" (ngSubmit)="edit(form.value)">
+  
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal text-danger ">Edit Your profile </h1>
+  </div>
+  <div class="mb-3 h3 ">
+    <label for="name" 
+     class="form-label">User name</label>
+    <input type="name" style="width: 500px;"
+    class="form-control" 
+    id="name" 
+    name="name"
+    required 
+    min="3"
+    [(ngModel)]="user.name"
+    ngModel
+    #name="ngModel">
+  </div>
+  <input type="file" name="avatar" ngModel (change)="handelUpload($event)">
+<br>
+<br>
+  <br>
+  <button class="btn btn-sm btn-success ">Update</button>
+
+
+</form>

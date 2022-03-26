@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "shoppingdeals-b28f4"
+  },
+  "targets": {
+    "shoppingdeals-b28f4": {
+      "hosting": {
+        "asmaa": [
+          "shoppingdeals-b28f4"
+        ]
+      }
+    }
+  }
+}

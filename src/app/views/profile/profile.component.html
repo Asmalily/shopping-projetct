@@ -1,0 +1,67 @@
+
+
+<section  class="vh-100 " style="background-color: #f7a782;margin-top: 60px;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-md-9 col-lg-7 col-xl-5" >
+        <div
+          class="card"
+          style="border-radius: 15px; width: 1200px; height: 550px"
+        >
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-shrink-0">
+                <img
+                  src="data:image/png;base64,{{ user.avatar }}"
+                  width="500px"
+                  alt="Profile Pic"
+                />
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <h5 style="font-size: 37px;color: #ff0000;" class="mb-1">Welcome {{ user.name }} </h5>
+                <p class="mt-4 pb-1" style="color: #2b2a2a;font-size: 27px;">{{ user.roles }}</p>
+                <div
+                  class="d-flex justify-content-start rounded-3 p-2 mt-5"
+                  style="background-color: #efefef"
+                >
+                  <div>
+                    <p class="small text-muted mb-1" style="font-size: 25px;">Age</p>
+                    <p class="mt-3" style="font-size: 20px">{{ user.age }}</p>
+                  </div>
+                  <div class="px-3">
+                    <p class="small text-muted mb-1" style="font-size: 25px">Email</p>
+                    <p class="mt-3" style="font-size: 20px">{{ user.email }}</p>
+                  </div>
+                </div>
+<br>
+        
+              <br>
+              <div *ngIf="hasRole(user)">
+<h5 style="color: #ff3d37;font-size: 23px"><i class="fa-solid fa-user" ></i> - Admin Tools:</h5>
+                  <div class="dropdown pt-1 d-flex" >
+                    <button class="btn btn-outline-primary dropdown-toggle "       
+                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" 
+                    style="width: 30%;"
+                    aria-expanded="true">
+                     Choose page 
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" routerLink="/testimg" href="#">Fashion </a></li>
+                      <li><a class="dropdown-item" href="#">Beauty</a></li>
+                      <li><a class="dropdown-item" href="#">houshold</a></li>                      <li><a class="dropdown-item" href="#">houshold</a></li>
+                      <li><a class="dropdown-item" href="#">appliance</a></li>
+
+                    </ul>
+                  </div>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

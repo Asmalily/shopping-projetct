@@ -1,0 +1,46 @@
+span{
+  color: rgb(133, 240, 138);
+font-size: 37px;
+}
+
+#email,#password{
+  width: 18%;
+margin-left: 690px;}
+
+.rem,.dropdown-item{
+  margin-left: 700px
+}
+
+
+.btn-block {
+
+margin-left: 800px}
+
+.alert-danger{
+  width: 30%;
+  margin-left: 600px
+
+}
+
+.bg{
+
+  background: linear-gradient(rgba(161, 71, 161, 0.8), rgb(192,72,72,0.8)), url("https://i.ibb.co/d7YHcBk/pexels-freestocksorg-749353.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height : 88vh;
+  padding: 50px;
+  width: 100%;
+
+}
+
+a.dropdown-item{
+  font-size: 19px;
+  margin-left: 677px;
+  width: 20%;
+
+}
+h4{
+  font-size: 34px;
+  text-shadow: 2px 2px #222222
+ 
+}

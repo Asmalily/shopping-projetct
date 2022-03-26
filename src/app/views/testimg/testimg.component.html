@@ -1,0 +1,62 @@
+
+<form class=" container form-group" #postform="ngForm" (ngSubmit)="addPost(postform.value)">
+  <div class="form-group">
+    <label for="title">Enter title </label>
+    <input type="text" 
+    class="form-control" id="title" 
+    placeholder="Enter title"
+    name="title"
+    ngModel
+    #title="ngModel"
+    >
+<div class="errors justify-content-center" *ngIf="title.invalid&&title.touched">
+<div class="errors justify-content-center" *ngIf="title.errors?.['required']" >
+
+</div>
+</div>
+  </div>
+<br>
+<div class="form-group">
+  <label for="description">Enter description</label>
+  <input type="text" 
+  class="form-control" id="title" 
+  placeholder="description"
+  name="description"
+  ngModel
+  #description="ngModel"
+  ><div class="errors justify-content-center" *ngIf="description.invalid&&description.touched">
+    <div class="errors justify-content-center" *ngIf="description.errors?.['required']" >
+    
+
+</div> </div> </div>
+<br>
+
+<div class="form-group">
+
+<label for="brand"> Enter brand </label>
+  <input type="text" 
+  class="form-control" id="author" 
+  name="brand"
+  ngModel
+  #brand="ngModel"  
+  
+  >
+
+
+  <div class="errors justify-content-center" *ngIf="brand.invalid&&brand.touched">
+    <div class="errors justify-content-center" *ngIf="brand.errors?.['required']" >
+    
+</div>
+</div>
+
+<br>
+<input type="file" name="postimage"  #postimage="ngModel"  
+
+ ngModel (change)="handleFiles($event)">
+
+<br>
+  <br>
+  <button class="btn btn-sm btn-success">Add Post</button>
+
+</div>
+</form>

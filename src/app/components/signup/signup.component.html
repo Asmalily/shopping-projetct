@@ -1,0 +1,300 @@
+<form class="form-group" style="margin-top: 60px"
+ #form="ngForm" (ngSubmit)="signUp(form.value)">
+  <section class="vh-86" style="background-color: #eee">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 text-danger">
+                    Sign up
+                  </p>
+
+                  <div class="d-flex flex-row align-items-center mb-2">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <div class="mb-3">
+                        <label for="name" class="form-label"></label>
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="name"
+                          name="name"
+                          required
+                          min="3"
+                          placeholder=" Enter your name"
+
+                          ngModel
+                    
+                          #name="ngModel"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class=" d-flex flex-row align-items-center mb-4">
+                    <i  class="fa-solid fa-calendar " style="font-size: 20px;"></i>   
+                   <label for="age" class="form-label"></label>
+                    <input style="margin-left: 19px"
+                      type="age"
+                      class="form-control"
+                      id="age"
+                      name="age"
+                      required
+                      placeholder=" Enter Age "
+
+                      ngModel
+                      #age="ngModel"
+                      (focus)="changeAge()"
+                    />
+
+                    <div class="alert alert-danger" *ngIf="invalidAge">
+                      Age should be a positive number
+                    </div>
+                  </div>
+
+                  <div class="mb-3 d-flex flex-row align-items-center mb-4">
+                   <i class="fas fa-envelope fa-lg me-3 fa-fw" ></i>    
+                   <label for="email" class="form-label"></label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="emailHelp"
+                      name="email"
+                      email
+                      required
+                      ngModel
+                      placeholder=" Enter Email"
+
+                      #email="ngModel"
+                      (focus)="changeEmail()"
+                    />
+                    <div
+                      *ngIf="email.touched && email.invalid"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="email.errors?.['required']">
+                        Please Enter your Email Address
+                      </div>
+                      <div *ngIf="email.errors?.['email']">
+                        invalid Email pattern
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- for using same mail -->
+                  <div class="alert alert-danger" *ngIf="invalidEmail">
+                    Sorry Email already in us .. try another one
+                  </div>
+
+                  <div class="mb-3 d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <label for="password" class="form-label"></label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      required
+                      minlength="7"
+                      name="password"
+                      ngModel
+                      placeholder=" Enter password"
+                      #password="ngModel"
+                      (focus)="changePassword()"
+                    />
+                    <div
+                      *ngIf="password.invalid && password.touched"
+                      class="alert alert-danger"
+                      role="alert"
+                    >
+                      <div *ngIf="password.errors?.['required']">
+                        Please Enter your password
+                      </div>
+                      <div *ngIf="password.errors?.['minlength']">
+                        Min length is
+                        {{ password.errors?.['minlength'].requiredLength}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="alert alert-danger" *ngIf="invalidPassword">
+                    Password must include uppercase, lowercase,special characer
+                    & number
+                  </div>
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input
+                      class="form-check-input me-2"
+                      type="checkbox"
+                      value=""
+                      id="form2Example3c"
+                    />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in
+                      <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
+<div><p>Already a member? <a routerLink=""> Login to you email</a></p></div>
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button
+                      type="submit"
+                      [disabled]="form.invalid"
+                      class="btn btn-primary"
+                    >
+                      Sign up
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                >
+                  <img
+                    src="https://i.ibb.co/5B0QRrx/pexels-photo-6347546.jpg"
+                    class="w-100"
+                    height="720px"
+                    
+                    alt="Sample image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+
+<!-- <form class="form-group" #form="ngForm" (ngSubmit)="signUp(form.value)">
+  <div class="text-center mb-4">
+    <img
+      class="mb-4"
+      style="width: 150px; height: 140px"
+      src="https://yourimageshare.com/ib/L0fon94TjU.png"
+      alt=""
+      width="72"
+      height="72"
+    />
+    <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">User name</label>
+    <input
+      type="name"
+      class="form-control"
+      id="name"
+      name="name"
+      required
+      min="3"
+      ngModel
+      #name="ngModel"
+    />
+
+    <div class="mb-3">
+      <label for="age" class="form-label">Age</label>
+      <input
+        type="age"
+        class="form-control"
+        id="age"
+        name="age"
+        required
+        ngModel
+        #age="ngModel"
+        (focus)="changeAge()"
+      />
+
+      <div class="alert alert-danger" *ngIf="invalidAge">
+        Age should be a positive number
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+        name="email"
+        email
+        required
+        ngModel
+        #email="ngModel"
+        (focus)="changeEmail()"
+      />
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+        <div *ngIf="email.errors?.['required']">
+          Please Enter your Email Address
+        </div>
+        <div *ngIf="email.errors?.['email']">invalid Email pattern</div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="invalidEmail">
+      Sorry Email already in us .. try another one
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        required
+        minlength="7"
+        name="password"
+        ngModel
+        #password="ngModel"
+        (focus)="changePassword()"
+      />
+      <div
+        *ngIf="password.invalid && password.touched"
+        class="alert alert-danger"
+        role="alert"
+      >
+        <div *ngIf="password.errors?.['required']">
+          Please Enter your password
+        </div>
+        <div *ngIf="password.errors?.['minlength']">
+          Min length is {{ password.errors?.['minlength'].requiredLength}}
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="invalidPassword">
+      Password must include uppercase, lowercase,special characer & number
+    </div>
+
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Choose gender</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="gridRadios1"
+            value="option1"
+            required
+          />
+          <label class="form-check-label" for="gridRadios1"> Male </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="gridRadios2"
+            value="option2"
+          />
+          <label class="form-check-label" for="gridRadios2"> Female </label>
+        </div>
+
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+          Sign up
+        </button>
+      </div>
+    </div>
+  </div>
+    </form>  -->

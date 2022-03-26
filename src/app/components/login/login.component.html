@@ -1,0 +1,103 @@
+<!-- <form class="form-group" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="mb-3">
+    <label for="email"  class="form-label">Email address</label>
+    <input type="email" 
+    class="form-control" 
+    id="email" aria-describedby="emailHelp"
+    name="email"
+    email
+    required 
+    ngModel
+    #email="ngModel">
+    <div *ngIf="email.touched && email.invalid"  class="alert alert-danger" role="alert">
+<div *ngIf="email.errors?.['required']">  Please Enter your Email Address  </div>
+<div *ngIf="email.errors?.['email']">  invalid Email pattern  </div>
+
+</div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" 
+    class="form-control" 
+    id="password"
+    required
+    name="password"
+    ngModel
+    #password="ngModel"
+    minlength="5"
+    >
+      <div *ngIf="password.invalid && password.touched" class="alert alert-danger" role="alert">
+      <div *ngIf="password.errors?.['required']">Please Enter your password</div>
+      <div *ngIf="password.errors?.['minlength']">Min length is {{ password.errors?.['minlength'].requiredLength}}</div>
+    </div>
+
+
+  </div>
+  <button type="submit" [disabled]="form" class="btn btn-primary">login</button>
+
+</form> -->
+
+<form class="form-group bg " style="margin-top: 60px"
+ #form="ngForm" (ngSubmit)="login(form.value)"
+>
+
+    <div class="text-center mb-5 container  ">
+      <h4 style="color:#c0ffff;margin-top: 200px;">Login with Email</h4>
+    </div>
+
+    <div class="form-label-group mb-3">
+      <input type="email"
+       id="email" 
+       class="form-control" placeholder="Email address" 
+       name="email"
+      email
+      required 
+      ngModel
+      #email="ngModel"
+      (focus)="invalidLogin"
+      >
+      
+      <div *ngIf="email.touched && email.invalid"  class="alert alert-danger" role="alert">
+  <div *ngIf="email.errors?.['required']">  Please Enter your Email Address  </div>
+  <div *ngIf="email.errors?.['email']">  invalid Email pattern  </div>
+  
+  </div>
+
+
+    </div>
+
+    <div class="form-label-group">
+      <input type="password" id="password" 
+      class="form-control" placeholder="Password" 
+      id="password"
+      required
+      name="password"
+      ngModel
+      #password="ngModel"
+      minlength="5"
+      (focus)="invalidLogin"
+
+      >
+
+      <div *ngIf="password.invalid && password.touched" class="alert alert-danger" role="alert">
+        <div *ngIf="password.errors?.['required']">Please Enter your password</div>
+        <div *ngIf="password.errors?.['minlength']">Min length is {{ password.errors?.['minlength'].requiredLength}}</div>
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="invalidLogin"> Please Check Email or Password </div>
+
+    <div class="checkbox mb-4 mt-3">
+      <label>
+        <input class="rem" type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+
+    <button class="btn  btn-primary btn-block" [disabled]="invalidLogin" type="submit">Sign in</button>
+
+    <div>
+      <div style="width: 40%; margin-left: 500px;" class="dropdown-divider"></div>
+      <a class="dropdown-item"  routerLink="/signup">Not A member? click here to Sign up now</a>
+      <p class="mt-5 mb-3 text-light text-center">© 2021-2022</p>
+
+      </div>
+  </form>

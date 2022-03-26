@@ -1,0 +1,77 @@
+<div class="container  " >
+  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <a href="home"><img style="margin-right: -20px;" 
+      src="https://i.ibb.co/WySSjFP/deals.png" 
+      width="250px" height="170px"
+      alt="deals"></a>  
+      <ul class="nav col-12  col-lg-auto me-lg-auto  justify-content-center branches " >
+        <li><a href="home" class="nav-link px-2 " style="color: rgb(10, 10, 10);">Home</a></li>
+
+        <div class="dropdown ">
+          <a class="btn   dropdown-toggle "
+          href="#" role="button" id="dropdownMenuLink" 
+          data-bs-toggle="dropdown" aria-expanded="false" >
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <br>
+            <li><a class="dropdown-item" style="background-color: transparent;" routerLink="/fashion">Fashion Deals</a></li>
+            <li><a class="dropdown-item" style="background-color: transparent;" routerLink="#">Makeup & Beauty Deals </a></li>
+            <li><a class="dropdown-item" style="background-color: transparent;" routerLink="#">Household Products</a></li>
+            <li><a class="dropdown-item" style="background-color: transparent;" routerLink="#">Appliances</a></li>
+
+          </ul>
+        </div>
+        <li><a href="home" class="nav-link px-2 " style="color: rgb(10, 10, 10); " routerLink="about" >About us</a></li>
+
+     <li> <a  class="nav-link " *ngIf="!isLoggedIn" style="color: black;"  routerLink="signup">Sign up</a></li>
+
+    </ul>
+
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 "
+     style="margin-top: -8px;margin-left: 10px;width: 200px;">
+      <input type="search" class="form-control"
+       placeholder="Search..." aria-label="Search">
+    </form>
+
+    <div class="dropdown text-end" style="margin-top: -10px;margin-left: -60px" >
+      <a href=""class="d-block link-dark nav-item text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-user-large " style="width: 170px;" ></i>
+      </a>
+      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+        <a class="nav-link" *ngIf="!isLoggedIn" routerLink="">Login</a>
+        <a  class="dropdown-item" routerLink="profile">Profile</a>
+        <a  class="dropdown-item" *ngIf="isLoggedIn" routerLink="settings">Settings</a>
+        <a  class="dropdown-item" *ngIf="isLoggedIn" (click)="logout()" routerLink="">logout</a>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<ul class="nav   navbar-light bg-dark ">
+  <a class="navbar-brand " routerLink="/">Shop Mania</a>
+  <li class="nav-item">
+    <a  class="nav-link" routerLink="">Home</a>
+  </li>
+
+  <li class="nav-item">
+    <a  class="nav-link" routerLink="profile">Profile</a>
+  </li>
+
+  <li class="nav-item">
+    <a  class="nav-link" *ngIf="!isLoggedIn"  routerLink="signup">Sign up</a>
+  </li>
+
+
+ <li class="nav-item">
+    <a class="nav-link" *ngIf="!isLoggedIn" routerLink="login">Login</a>
+  </li> 
+
+<li class="nav-item">
+    <a  class="nav-link" *ngIf="isLoggedIn" (click)="logout()" routerLink="login">logout</a>
+  </li>
+  <li class="nav-item">
+    <a  class="nav-link" *ngIf="isLoggedIn" routerLink="settings">Settings</a>
+  </li> -->

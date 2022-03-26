@@ -1,0 +1,54 @@
+ 
+ <!-- ///template form  -->
+ <form #postForm="ngForm" (ngSubmit)="updatePost(postForm.value)" class="container mt-5">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      ngModel
+      required
+      #title="ngModel"
+      [(ngModel)]="posts.title"
+      placeholder="Enter title"
+    />
+    <div class="errors d-flex justify-content-center" 
+    *ngIf="title.touched && title.invalid">
+
+    <div *ngIf="title.errors?.['required']">
+        *Title is required*
+    </div>
+    </div>
+    
+  </div>
+  
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      name="description"
+      ngModel
+      required
+      [(ngModel)]="posts.description"
+      #description = 'ngModel'
+      placeholder="Enter description"
+    />
+    <div class="errors d-flex justify-content-center" 
+    *ngIf="description.touched && description.invalid">
+
+    <div *ngIf="description.errors?.['required']">
+        *Description is required*
+    </div>
+    </div>
+    
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
